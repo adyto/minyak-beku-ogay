@@ -77,6 +77,7 @@ export default function TopUpForm(props: TopUpFormProps) {
             {payments.map((payment) =>
               payment.banks.map((bank) => (
                 <PaymentItem
+                  key={bank._id}
                   bankID={bank._id}
                   type={payment.type}
                   name={bank.nameBank}

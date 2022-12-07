@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -7,14 +8,14 @@ export default function Footer() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-4 text-lg-start text-center">
-              <a href="/#" className="mb-30">
+              <Link href="/#" className="mb-30">
                 <Image
                   src="/icon/logo1.png"
                   width={60}
                   height={60}
                   alt="logofooter"
                 />
-              </a>
+              </Link>
               <p className="mt-30 text-lg color-palette-1 mb-30">
                 Ogay Minyak Beku
                 <br /> kualitas minyak pilihan dan terjamin <br /> akan keamanan
@@ -32,13 +33,13 @@ export default function Footer() {
                   </p>
                   <ul className="list-unstyled">
                     <li className="mb-6">
-                      <a
+                      <Link
                         href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=adiyulianto61@gmail.com"
                         className="text-lg color-palette-1 text-decoration-none"
                         target="_blank"
                       >
                         adiyulianto61@gmail.com
-                      </a>
+                      </Link>
                     </li>
                     <li className="mb-6">
                       <a
