@@ -8,25 +8,28 @@ export default function Footer() {
           <div className="row">
             <div className="col-lg-4 text-lg-start text-center">
               <a href="/#" className="mb-30">
-                <Image src="/icon/logo1.png" width={60} height={60} />
+                <Image
+                  src="/icon/logo1.png"
+                  width={60}
+                  height={60}
+                  alt="logofooter"
+                />
               </a>
               <p className="mt-30 text-lg color-palette-1 mb-30">
                 Ogay Minyak Beku
-                <br />
-                {' '}
-                kualitas minyak pilihan dan
-                terjamin
-                {' '}
-                <br />
-                {' '}
-                akan keamanan product
+                <br /> kualitas minyak pilihan dan terjamin <br /> akan keamanan
+                product
               </p>
-              <p className="mt-30 text-lg color-palette-1 mb-30">Copyright 2021. All Rights Reserved.</p>
+              <p className="mt-30 text-lg color-palette-1 mb-30">
+                Copyright 2021. All Rights Reserved.
+              </p>
             </div>
             <div className="col-lg-8 mt-lg-0 mt-20">
               <div className="row gap-sm-0">
                 <div className="col-md-4 col-12 mt-lg-0 mt-md-0 mt-25">
-                  <p className="text-lg fw-semibold color-palette-1 mb-12">Hubungi Kami</p>
+                  <p className="text-lg fw-semibold color-palette-1 mb-12">
+                    Hubungi Kami
+                  </p>
                   <ul className="list-unstyled">
                     <li className="mb-6">
                       <a
@@ -39,11 +42,10 @@ export default function Footer() {
                     </li>
                     <li className="mb-6">
                       <a
-                      href="#contact"
+                        href="#contact"
                         className="text-lg color-palette-1 text-decoration-none"
                       >
-                        Bekasi,
-                        Jawa Barat
+                        Bekasi, Jawa Barat
                       </a>
                     </li>
                     <li className="mb-6">
@@ -51,8 +53,7 @@ export default function Footer() {
                         href="https://wa.me/6281281903574?text=Layanan%20Contact%20Center"
                         className="text-lg color-palette-1 text-decoration-none"
                       >
-                        0812 - 8190 -
-                        3574
+                        0812 - 8190 - 3574
                       </a>
                     </li>
                   </ul>
