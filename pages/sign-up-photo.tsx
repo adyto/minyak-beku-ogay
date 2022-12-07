@@ -6,7 +6,7 @@ import { getKardusCategory } from '../services/pelanggan';
 import { toast } from 'react-toastify';
 import { CategoryTypes } from '../services/data-types';
 
-export default function signUpPhoto() {
+export default function SignUpPhoto() {
   const [categories, setCategories] = useState([]);
   const [favorite, setFavorite] = useState('');
   const [image, setImage] = useState<any>('null');
