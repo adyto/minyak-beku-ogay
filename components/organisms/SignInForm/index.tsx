@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { setSignIn } from '../../../services/auth';
-import { useRouter  } from 'next/router';
-import Cookies from 'js-cookie'
+import { useRouter } from 'next/router';
+import Cookies from 'js-cookie';
 
 export default function SignInForm() {
   const [email, setEmail] = useState('');
@@ -15,33 +15,34 @@ export default function SignInForm() {
       email,
       password,
     };
-    if(!email || !password) {
-      toast.error('Email dan Password wajib diisi!')
+    if (!email || !password) {
+      toast.error('Email dan Password wajib diisi!');
     } else {
-      const response = await setSignIn(data)
-      if(response.error){
-        toast.error(response.message)
+      const response = await setSignIn(data);
+      if (response.error) {
+        toast.error(response.message);
       } else {
-        toast.success('Login Berhasil!')
-        const token = response.data.token
+        toast.success('Login Berhasil!');
+        const token = response.data.token;
         const tokenBase64 = btoa(token);
-        Cookies.set('token', tokenBase64, { expires: 1})
-        router.push('/')
+        Cookies.set('token', tokenBase64, { expires: 1 });
+        router.push('/');
       }
     }
-  }
+  };
 
   return (
     <>
       <h2 className="text-4xl fw-bold color-palette-1 mb-10">Sign In</h2>
-      <p className="text-lg color-palette-1 m-0">Masuk untuk melakukan proses pembelian</p>
+      <p className="text-lg color-palette-1 m-0">
+        Masuk untuk melakukan proses pembelian
+      </p>
       <div className="pt-50">
         <label className="form-label text-lg fw-medium color-palette-1 mb-10">
-          Email
-          Address
+          Email Address
         </label>
-        <input 
-          type="email" 
+        <input
+          type="email"
           className="form-control rounded-pill text-lg"
           placeholder="Enter your email address"
           value={email}
@@ -68,15 +69,13 @@ export default function SignInForm() {
         >
           Continue to Sign In
         </button>
-        <Link href="/sign-up">
-          <button
-            className="btn btn-sign-up fw-medium text-lg color-palette-1 rounded-pill"
-            type="button"
-          >
-            Sign Up
-          </button>
+        <Link
+          href="/sign-up"
+          className="btn btn-sign-up fw-medium text-lg color-palette-1 rounded-pill"
+        >
+          Sign Up
         </Link>
       </div>
     </>
-  )
+  );
 }

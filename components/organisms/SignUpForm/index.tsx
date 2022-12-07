@@ -74,13 +74,11 @@ export default function SignUpForm() {
         >
           Continue
         </button>
-        <Link href="../sign-in">
-          <span
-            className="btn btn-sign-in fw-medium text-lg color-palette-1 rounded-pill"
-            role="button"
-          >
-            Sign In
-          </span>
+        <Link
+          href="../sign-in"
+          className="btn btn-sign-in fw-medium text-lg color-palette-1 rounded-pill"
+        >
+          Sign In
         </Link>
       </div>
     </>

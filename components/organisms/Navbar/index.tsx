@@ -8,7 +8,7 @@ export default function index() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light bg-white pt-lg-40 pb-lg-40 pt-30 pb-50">
         <div className="container-fluid">
           <a className="navbar-brand" href="/#">
-            <Image src="/icon/logo1.png" width={60} height={60} />
+            <Image src="/icon/logo1.png" width={60} height={60} alt="logo" />
           </a>
           <button
             className="navbar-toggler"
@@ -24,7 +24,7 @@ export default function index() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto text-lg gap-lg-0 gap-2">
               <Menu title="Menu" active />
-              <Menu title="Product" />
+              <Menu title="Product" href="#product" />
               <Auth />
             </ul>
           </div>

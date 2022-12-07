@@ -1,20 +1,17 @@
 import cx from 'classnames';
-import NumberFormat from 'react-number-format';
+import { NumericFormat } from 'react-number-format';
 
 interface TableRowProps {
-    title: string;
-    categori: string;
-    item: string;
-    price: number;
-    status: string;
-    image: string;
-
+  title: string;
+  categori: string;
+  item: string;
+  price: number;
+  status: string;
+  image: string;
 }
 
 export default function TableRow(props: TableRowProps) {
-  const {
-    title, categori, item, price, status, image,
-  } = props;
+  const { title, categori, item, price, status, image } = props;
   const statusClass = cx({
     'float-start icon-status': true,
     pending: status === 'pending',
@@ -36,17 +33,17 @@ export default function TableRow(props: TableRowProps) {
             <p className="game-title fw-medium text-start color-palette-1 m-0">
               {title}
             </p>
-            <p className="text-xs fw-normal text-start color-palette-2 m-0">{categori}</p>
+            <p className="text-xs fw-normal text-start color-palette-2 m-0">
+              {categori}
+            </p>
           </div>
         </th>
         <td>
-          <p className="fw-medium color-palette-1 m-0">
-            {item}
-          </p>
+          <p className="fw-medium color-palette-1 m-0">{item}</p>
         </td>
         <td>
           <p className="fw-medium text-start color-palette-1 m-0">
-            <NumberFormat
+            <NumericFormat
               value={price}
               prefix="Rp. "
               displayType="text"
