@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function signUpSuccess() {
   return (
@@ -183,19 +183,21 @@ export default function signUpSuccess() {
           </svg>
         </div>
         <div className="pt-70 pb-md-50 pb-150">
-          <h2 className="text-4xl fw-bold text-center color-palette-1 mb-10">Well Done!</h2>
+          <h2 className="text-4xl fw-bold text-center color-palette-1 mb-10">
+            Well Done!
+          </h2>
           <p className="text-lg text-center color-palette-1 m-0">
             Kamu sudah bisa melakukan Pembelian
           </p>
         </div>
         <div className="button-group d-flex flex-column mx-auto">
           <Link href="/sign-in">
-            <a
+            <span
               className="btn btn-top-up fw-medium text-lg text-white rounded-pill"
               role="button"
             >
               Sign In
-            </a>
+            </span>
           </Link>
         </div>
       </div>

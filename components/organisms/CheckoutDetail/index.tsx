@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import NumberFormat from "react-number-format";
+import { useEffect, useState } from 'react';
+import { NumericFormat } from 'react-number-format';
 
 export default function CheckoutDetail() {
   const [dataPembelian, setDataPembelian] = useState({
@@ -18,16 +18,16 @@ export default function CheckoutDetail() {
         nameBank: '',
         name: '',
         noRekening: '',
-      }
+      },
     },
     bankAccountName: '',
-  })
+  });
 
   useEffect(() => {
-    const dataFromLocal = localStorage.getItem('data-pembelian')
-    const dataPembelianLocal = JSON.parse(dataFromLocal!)
-    setDataPembelian(dataPembelianLocal)
-  }, [])
+    const dataFromLocal = localStorage.getItem('data-pembelian');
+    const dataPembelianLocal = JSON.parse(dataFromLocal!);
+    setDataPembelian(dataPembelianLocal);
+  }, []);
 
   const itemPrice = dataPembelian.nominalItem.price;
   const tax = dataPembelian.nominalItem.price * (10 / 100);
@@ -35,29 +35,24 @@ export default function CheckoutDetail() {
   return (
     <>
       <div className="purchase pt-md-50 pt-30">
-        <h2 className="fw-bold text-xl color-palette-1 mb-20">Purchase Details</h2>
+        <h2 className="fw-bold text-xl color-palette-1 mb-20">
+          Purchase Details
+        </h2>
         <p className="text-lg color-palette-1 mb-20">
-          Order ID
-          {' '}
-          <span className="purchase-details">
-            #MB001
-          </span>
+          Order ID <span className="purchase-details">#MB001</span>
         </p>
         <p className="text-lg color-palette-1 mb-20">
-          Item
-          {' '}
+          Item{' '}
           <span className="purchase-details">
-            {dataPembelian.nominalItem.nominalQuantity} 
-            {' '}
+            {dataPembelian.nominalItem.nominalQuantity}{' '}
             {dataPembelian.nominalItem.nominalName}
           </span>
         </p>
         <p className="text-lg color-palette-1 mb-20">
-          Price
-          {' '}
+          Price{' '}
           <span className="purchase-details">
-            <NumberFormat 
-              value={itemPrice} 
+            <NumericFormat
+              value={itemPrice}
               displayType={'text'}
               thousandSeparator="."
               decimalSeparator=","
@@ -66,11 +61,10 @@ export default function CheckoutDetail() {
           </span>
         </p>
         <p className="text-lg color-palette-1 mb-20">
-          Tax (10%)
-          {' '}
+          Tax (10%){' '}
           <span className="purchase-details">
-            <NumberFormat 
-              value={tax} 
+            <NumericFormat
+              value={tax}
               displayType={'text'}
               thousandSeparator="."
               decimalSeparator=","
@@ -79,55 +73,48 @@ export default function CheckoutDetail() {
           </span>
         </p>
         <p className="text-lg color-palette-1 mb-20">
-          Total
-          {' '}
+          Total{' '}
           <span className="purchase-details color-palette-4">
-            <NumberFormat 
-              value={totalPrice} 
+            <NumericFormat
+              value={totalPrice}
               displayType={'text'}
               thousandSeparator="."
               decimalSeparator=","
               prefix={'Rp. '}
             />
           </span>
-
         </p>
       </div>
       <div className="payment pt-md-50 pb-md-50 pt-10 pb-10">
-        <h2 className="fw-bold text-xl color-palette-1 mb-20">Payment Informations</h2>
+        <h2 className="fw-bold text-xl color-palette-1 mb-20">
+          Payment Informations
+        </h2>
         <p className="text-lg color-palette-1 mb-20">
-          Your Account Name
-          {' '}
+          Your Account Name{' '}
           <span className="purchase-details">
             {dataPembelian.bankAccountName}
           </span>
-
         </p>
         <p className="text-lg color-palette-1 mb-20">
-          Type
-          {' '}
+          Type{' '}
           <span className="payment-details">
             {dataPembelian.paymentItem.payment.type}
           </span>
         </p>
         <p className="text-lg color-palette-1 mb-20">
-          Bank Name
-          {' '}
+          Bank Name{' '}
           <span className="payment-details">
             {dataPembelian.paymentItem.bank.nameBank}
           </span>
         </p>
         <p className="text-lg color-palette-1 mb-20">
-          Bank Account Name
-          {' '}
+          Bank Account Name{' '}
           <span className="payment-details">
             {dataPembelian.paymentItem.bank.name}
           </span>
-
         </p>
         <p className="text-lg color-palette-1 mb-20">
-          Bank Number
-          {' '}
+          Bank Number{' '}
           <span className="payment-details">
             {dataPembelian.paymentItem.bank.noRekening}
           </span>

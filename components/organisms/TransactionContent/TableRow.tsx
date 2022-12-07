@@ -1,27 +1,24 @@
 import cx from 'classnames';
 import Link from 'next/link';
-import NumberFormat from 'react-number-format'
+import NumberFormat from 'react-number-format';
 
 interface TableRowProps {
-    image: string;
-    title: string;
-    category: string;
-    item: string;
-    price: number;
-    status: string;
-    id: string;
+  image: string;
+  title: string;
+  category: string;
+  item: string;
+  price: number;
+  status: string;
+  id: string;
 }
 
 export default function TableRow(props: TableRowProps) {
-  const {
-    image, title, category, item, price, status, id,
-  } = props;
+  const { image, title, category, item, price, status, id } = props;
   const statusClass = cx({
     'float-start icon-status': true,
     pending: status === 'pending',
     success: status === 'success',
     failed: status === 'failed',
-
   });
   return (
     <tr data-category="pending" className="align-middle">
@@ -37,13 +34,13 @@ export default function TableRow(props: TableRowProps) {
           <p className="game-title fw-medium text-start color-palette-1 m-0">
             {title}
           </p>
-          <p className="text-xs fw-normal text-start color-palette-2 m-0">{category}</p>
+          <p className="text-xs fw-normal text-start color-palette-2 m-0">
+            {category}
+          </p>
         </div>
       </th>
       <td>
-        <p className="fw-medium color-palette-1 m-0">
-          {item}
-        </p>
+        <p className="fw-medium color-palette-1 m-0">{item}</p>
       </td>
       <td>
         <p className="fw-medium color-palette-1 m-0">
@@ -61,17 +58,12 @@ export default function TableRow(props: TableRowProps) {
           <span className={statusClass} />
           <p className="fw-medium text-start color-palette-1 m-0 position-relative">
             {status}
-
           </p>
         </div>
       </td>
       <td>
         <Link href={`/member/transactions/${id}`}>
-          <a
-            className="btn btn-status rounded-pill text-sm"
-          >
-            Details
-          </a>
+          <span className="btn btn-status rounded-pill text-sm">Details</span>
         </Link>
       </td>
     </tr>
