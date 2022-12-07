@@ -7,27 +7,27 @@ import TopUpItem from '../../components/organisms/TopUpItem';
 import { getDetailVoucher } from '../../services/pelanggan';
 
 export default function Detail() {
-  const { query, isReady} = useRouter();
+  const { query, isReady } = useRouter();
   const [dataItem, setDataItem] = useState({
     name: '',
     thumbnail: '',
     category: {
-      name: ''
+      name: '',
     },
-  })
+  });
   const [nominals, setNominals] = useState([]);
   const [payments, setPayments] = useState([]);
 
-  const getVoucherDetailAPI = useCallback(async(id) => {
+  const getVoucherDetailAPI = useCallback(async (id: any) => {
     const data = await getDetailVoucher(id);
-    setDataItem(data.detail)
+    setDataItem(data.detail);
     localStorage.setItem('data-item', JSON.stringify(data.detail));
-    setNominals(data.detail.nominals)
-    setPayments(data.payment)
+    setNominals(data.detail.nominals);
+    setPayments(data.payment);
   }, []);
 
   useEffect(() => {
-    if(isReady){
+    if (isReady) {
       getVoucherDetailAPI(query.id);
     }
   }, [isReady]);
@@ -38,8 +38,12 @@ export default function Detail() {
       <section className="detail pt-lg-60 pb-50">
         <div className="container-xxl container-fluid">
           <div className="detail-header pb-50">
-            <h2 className="text-4xl fw-bold color-palette-1 text-start mb-10">Pembelian</h2>
-            <p className="text-lg color-palette-1 mb-0">Lakukan pembelian dengan mudah</p>
+            <h2 className="text-4xl fw-bold color-palette-1 text-start mb-10">
+              Pembelian
+            </h2>
+            <p className="text-lg color-palette-1 mb-0">
+              Lakukan pembelian dengan mudah
+            </p>
           </div>
           <div className="row">
             <div className="col-xl-3 col-lg-4 col-md-5 pb-30 pb-md-0 pe-md-25 text-md-start">

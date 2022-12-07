@@ -1,10 +1,10 @@
 import cx from 'classnames';
-import NumberFormat from 'react-number-format';
+import { NumericFormat } from 'react-number-format';
 
 interface RowProps {
-    label: string;
-    value: string|number
-    color?: boolean
+  label: string;
+  value: string | number;
+  color?: boolean;
 }
 
 export default function Row(props: Partial<RowProps>) {
@@ -16,24 +16,20 @@ export default function Row(props: Partial<RowProps>) {
 
   return (
     <p className="text-lg color-palette-1 mb-20">
-      {label}
-      {' '}
-      <span
-        className={colorDetails}
-      >
-        {typeof value === "number" ? (
-          <NumberFormat
-           value={value}
-           prefix="Rp. "
-           displayType="text"
-           thousandSeparator="."
-           decimalSeparator=","
+      {label}{' '}
+      <span className={colorDetails}>
+        {typeof value === 'number' ? (
+          <NumericFormat
+            value={value}
+            prefix="Rp. "
+            displayType="text"
+            thousandSeparator="."
+            decimalSeparator=","
           />
-          ): (
-            value
+        ) : (
+          value
         )}
       </span>
-
     </p>
   );
 }

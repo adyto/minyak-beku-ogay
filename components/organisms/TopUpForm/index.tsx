@@ -34,7 +34,7 @@ export default function TopUpForm(props: TopUpFormProps) {
   };
 
   const onSubmit = () => {
-    if (bankAccountName === '' || nominalItem === {} || paymentItem === {}) {
+    if (bankAccountName === '' || nominalItem === '' || paymentItem === '') {
       toast.error('Silahkan isi data pembelian!');
     } else {
       const data = {
