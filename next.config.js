@@ -6,7 +6,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'minyak-beku-server.up.railway.app',
+        hostname: 'web-production-cfa95.up.railway.app',
         port: '',
         pathname: '/uploads/**',
       },

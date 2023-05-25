@@ -29,6 +29,8 @@ export default function TransactionContent() {
     getMemberTransactionAPI(value);
   };
 
+  console.log(tab);
+
   const IMG = process.env.NEXT_PUBLIC_IMG;
   return (
     <main className="main-wrapper">

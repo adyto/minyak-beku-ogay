@@ -9,6 +9,7 @@ export default function Profile() {
     username: '',
     email: '',
   });
+  console.log(user.avatar);
   useEffect(() => {
     const token = Cookies.get('token');
     if (token) {
@@ -19,10 +20,13 @@ export default function Profile() {
     }
   }, []);
 
+  const API_IMG = process.env.NEXT_PUBLIC_IMG;
+  console.log(API_IMG);
+
   return (
     <div className="user text-center pb-50 pe-30">
       <img
-        src={`https://minyak-beku-server.up.railway.app/uploads/${user.avatar}`}
+        src={`${API_IMG}/${user.avatar}`}
         alt="profile"
         width="90"
         height="90"

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import MinyakItem from '../../molecules/MinyakItem';
 import { getFeaturedGame } from '../../../services/pelanggan';
 import { MinyakItemTypes } from '../../../services/data-types';
+import axios from 'axios';
 
 export default function FeaturedGame() {
   const [kardusList, setKardusList] = useState([]);
@@ -14,9 +15,14 @@ export default function FeaturedGame() {
   useEffect(() => {
     getFeatureGameList();
   }, []);
-  console.log(12312);
 
   const API_IMG = process.env.NEXT_PUBLIC_IMG;
+  console.log(API_IMG);
+
+  // const data = axios.get(
+  //   'https://web-production-cfa95.up.railway.app/api/v1/pelanggans/landingpage',
+  // );
+  // console.log(data);
 
   return (
     <section id="product" className="featured-game pt-50 pb-50">
