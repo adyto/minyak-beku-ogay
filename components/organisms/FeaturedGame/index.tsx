@@ -14,6 +14,7 @@ export default function FeaturedGame() {
   useEffect(() => {
     getFeatureGameList();
   }, []);
+  console.log(12312);
 
   const API_IMG = process.env.NEXT_PUBLIC_IMG;
 
