@@ -16,6 +16,8 @@ export default function FeaturedGame() {
     getFeatureGameList();
   }, []);
 
+  console.log(kardusList);
+
   const API_IMG = process.env.NEXT_PUBLIC_IMG;
   console.log(API_IMG);
 
@@ -35,15 +37,19 @@ export default function FeaturedGame() {
           className="d-flex flex-row flex-lg-wrap overflow-setting justify-content-lg-around gap-lg-3 gap-4"
           data-aos="fade-up"
         >
-          {kardusList.map((item: MinyakItemTypes) => (
-            <MinyakItem
-              key={item._id}
-              title={item.name}
-              category={item.category.name}
-              thumbnail={`${API_IMG}/${item.thumbnail}`}
-              id={item._id}
-            />
-          ))}
+          {kardusList.map((item: MinyakItemTypes) =>
+            item.status === 'Y' ? (
+              <MinyakItem
+                key={item._id}
+                title={item.name}
+                category={item.category.name}
+                thumbnail={`${API_IMG}/${item.thumbnail}`}
+                id={item._id}
+              />
+            ) : (
+              ''
+            ),
+          )}
         </div>
       </div>
     </section>
